@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="BeatIndicator">
+        <item name="android:layout_width">16dp</item>
+        <item name="android:layout_height">16dp</item>
+        <item name="android:layout_margin">4dp</item>
+        <item name="android:background">@drawable/beat_indicator_inactive</item>
+    </style>
+
+    <style name="ControlButton">
+        <item name="android:layout_width">56dp</item>
+        <item name="android:layout_height">56dp</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:backgroundTint">@color/purple_500</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="MainButton">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">64dp</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:backgroundTint">@color/purple_700</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="BPMDisplay">
+        <item name="android:textSize">72sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/purple_700</item>
+    </style>
+
+    <style name="TempoTerm">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">italic</item>
+        <item name="android:textColor">@color/purple_500</item>
+    </style>
+</resources>

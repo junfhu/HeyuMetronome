@@ -1,0 +1,15 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.MyApplication" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your dark theme here. -->
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryDark">@color/purple_700</item>
+        <item name="colorAccent">@color/teal_200</item>
+        <!-- 状态栏透明，让系统图标可见 -->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <!-- 状态栏图标浅色（夜间模式背景黑，图标用浅色） -->
+        <item name="android:windowLightStatusBar">false</item>
+        <!-- 窗口背景（夜间模式用黑色） -->
+        <item name="android:windowBackground">@color/black</item>
+    </style>
+</resources>

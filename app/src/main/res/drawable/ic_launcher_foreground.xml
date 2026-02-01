@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- 鱼身 - 圆润三角形 -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M25,54 Q25,30 55,30 L85,40 Q100,54 85,68 L55,78 Q25,78 25,54z" />
+    <!-- 尾巴 -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M90,54 L105,40 L105,68 Z" />
+    <!-- 眼睛 -->
+    <path
+        android:fillColor="#FF6200EE"
+        android:pathData="M40,48c-2.5,0 -4.5,2 -4.5,4.5s2,4.5 4.5,4.5s4.5,-2 4.5,-4.5S42.5,48 40,48z" />
+    <!-- 身体条纹1 -->
+    <path
+        android:pathData="M50,35 Q52,54 50,73"
+        android:strokeWidth="2.5"
+        android:strokeColor="#E8E8E8"
+        android:strokeLineCap="round" />
+    <!-- 身体条纹2 -->
+    <path
+        android:pathData="M60,33 Q62,54 60,75"
+        android:strokeWidth="2.5"
+        android:strokeColor="#E8E8E8"
+        android:strokeLineCap="round" />
+    <!-- 身体条纹3 -->
+    <path
+        android:pathData="M70,35 Q72,54 70,73"
+        android:strokeWidth="2.5"
+        android:strokeColor="#E8E8E8"
+        android:strokeLineCap="round" />
+</vector>

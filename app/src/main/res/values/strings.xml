@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">河鱼节拍器</string>
+    <string name="app_version">版本 0.1</string>
+    <string name="app_author">作者：胡峻峰</string>
+    <string name="app_copyright">© 2026 河鱼软件</string>
+    <string name="start">开始</string>
+    <string name="stop">停止</string>
+    <string name="toggle_view">切换视图</string>
+    <string name="time_signature">拍号</string>
+    <string name="save_preset">保存当前</string>
+    <string name="saved_presets">预设速度</string>
+    <string name="help">帮助</string>
+    <string name="help_title">关于河鱼节拍器</string>
+    <string name="help_message">河鱼节拍器\n\n完全免费使用\n\n如有问题或建议，请联系：\njunfhu@163.com\n\n感谢您的使用！</string>
+    <string name="confirm">确定</string>
+    <string name="cancel">取消</string>
+    <string name="save">保存</string>
+    <string name="delete">删除</string>
+    <string name="select_time_signature">选择拍号</string>
+    <string name="save_current_tempo">保存当前速度</string>
+    <string name="preset_name_hint">预设名称</string>
+    <string name="delete_preset">删除预设</string>
+    <string name="delete_preset_confirm">确定要删除这个预设吗？</string>
+    <string name="preset_saved">已保存</string>
+</resources>

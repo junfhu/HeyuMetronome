@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="time_signatures">
+        <item>2/4</item>
+        <item>3/4</item>
+        <item>4/4</item>
+        <item>6/8</item>
+    </string-array>
+
+    <string-array name="tempo_terms">
+        <item>Grave</item>
+        <item>Largo</item>
+        <item>Lento</item>
+        <item>Adagio</item>
+        <item>Andante</item>
+        <item>Moderato</item>
+        <item>Allegretto</item>
+        <item>Allegro</item>
+        <item>Vivace</item>
+        <item>Presto</item>
+    </string-array>
+
+    <integer-array name="tempo_bpm_values">
+        <item>40</item>
+        <item>50</item>
+        <item>55</item>
+        <item>65</item>
+        <item>80</item>
+        <item>95</item>
+        <item>110</item>
+        <item>130</item>
+        <item>170</item>
+        <item>190</item>
+    </integer-array>
+</resources>

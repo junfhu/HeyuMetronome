@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:fitsSystemWindows="true"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <!-- Toolbar with view toggle -->
+        <LinearLayout
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="?attr/colorPrimary"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <!-- 左边：帮助按钮 -->
+            <Button
+                android:id="@+id/btnHelp"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="@string/help"
+                android:textSize="12sp" />
+
+            <!-- 中间：标题（自适应宽度并居中） -->
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/app_name"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <!-- 右边：切换视图按钮 -->
+            <Button
+                android:id="@+id/btnToggleView"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="@string/toggle_view"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <!-- Visual Indicator Container -->
+        <FrameLayout
+            android:id="@+id/visualContainer"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+            <!-- Pendulum View -->
+            <ImageView
+                android:id="@+id/pendulumView"
+                android:layout_width="20dp"
+                android:layout_height="120dp"
+                android:layout_gravity="center|top"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/beat_indicator_accent"
+                android:visibility="visible" />
+
+            <!-- Beat Dots Container -->
+            <LinearLayout
+                android:id="@+id/dotsContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone" />
+
+        </FrameLayout>
+
+        <!-- Current Beat Display -->
+        <TextView
+            android:id="@+id/tvCurrentBeat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="1 / 4"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/purple_700"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/visualContainer" />
+
+        <!-- BPM Display -->
+        <TextView
+            android:id="@+id/tvBPM"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="60"
+            android:textSize="80sp"
+            android:textStyle="bold"
+            android:textColor="@color/purple_700"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvCurrentBeat" />
+
+        <TextView
+            android:id="@+id/tvTempoTerm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Largo"
+            android:textSize="20sp"
+            android:textStyle="italic"
+            android:textColor="@color/purple_500"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvBPM" />
+
+        <!-- Time Signature -->
+        <TextView
+            android:id="@+id/tvTimeSignatureLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="拍号:"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTempoTerm" />
+
+        <TextView
+            android:id="@+id/tvTimeSignature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="4/4"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/purple_700"
+            android:background="?attr/selectableItemBackground"
+            android:padding="8dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_constraintBottom_toBottomOf="@id/tvTimeSignatureLabel"
+            app:layout_constraintStart_toEndOf="@id/tvTimeSignatureLabel"
+            app:layout_constraintTop_toTopOf="@id/tvTimeSignatureLabel" />
+
+        <!-- BPM Controls -->
+        <LinearLayout
+            android:id="@+id/bpmControls"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/tvTimeSignatureLabel">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/btnDecrease10"
+                    android:layout_width="56dp"
+                    android:layout_height="40dp"
+                    android:text="-10"
+                    android:textSize="13sp"
+                    android:padding="0dp"
+                    android:minHeight="0dp"
+                    android:minWidth="0dp" />
+
+                <Button
+                    android:id="@+id/btnDecrease5"
+                    android:layout_width="56dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="2dp"
+                    android:text="-5"
+                    android:textSize="13sp"
+                    android:padding="0dp"
+                    android:minHeight="0dp"
+                    android:minWidth="0dp" />
+
+                <Button
+                    android:id="@+id/btnDecrease1"
+                    android:layout_width="56dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="2dp"
+                    android:text="-1"
+                    android:textSize="13sp"
+                    android:padding="0dp"
+                    android:minHeight="0dp"
+                    android:minWidth="0dp" />
+            </LinearLayout>
+
+            <com.google.android.material.slider.Slider
+                android:id="@+id/sliderBPM"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="12dp"
+                android:layout_weight="1"
+                android:valueFrom="40"
+                android:valueTo="208"
+                android:stepSize="1" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/btnIncrease10"
+                    android:layout_width="56dp"
+                    android:layout_height="40dp"
+                    android:text="+10"
+                    android:textSize="13sp"
+                    android:padding="0dp"
+                    android:minHeight="0dp"
+                    android:minWidth="0dp" />
+
+                <Button
+                    android:id="@+id/btnIncrease5"
+                    android:layout_width="56dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="2dp"
+                    android:text="+5"
+                    android:textSize="13sp"
+                    android:padding="0dp"
+                    android:minHeight="0dp"
+                    android:minWidth="0dp" />
+
+                <Button
+                    android:id="@+id/btnIncrease1"
+                    android:layout_width="56dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="2dp"
+                    android:text="+1"
+                    android:textSize="13sp"
+                    android:padding="0dp"
+                    android:minHeight="0dp"
+                    android:minWidth="0dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Preset Section -->
+        <TextView
+            android:id="@+id/tvPresetsLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="预设速度:"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bpmControls" />
+
+        <Button
+            android:id="@+id/btnSavePreset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="保存当前"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@id/tvPresetsLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvPresetsLabel" />
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/presetChipGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            app:layout_constraintTop_toBottomOf="@id/tvPresetsLabel" />
+
+        <!-- Main Control Button -->
+        <Button
+            android:id="@+id/btnStartStop"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            android:text="开始"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/presetChipGroup" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
