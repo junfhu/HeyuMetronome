@@ -32,7 +32,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
                 android:text="@string/help"
-                android:textSize="12sp" />
+                android:textSize="12sp"
+                
+                 />
 
             <!-- 中间：标题（自适应宽度并居中） -->
             <TextView
@@ -41,7 +43,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/app_name"
-                android:textColor="@android:color/white"
+                android:textColor="@color/title_text"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -51,7 +53,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
                 android:text="@string/toggle_view"
-                android:textSize="12sp" />
+                android:textSize="12sp"
+                
+                 />
         </LinearLayout>
 
         <!-- Visual Indicator Container -->
@@ -175,7 +179,9 @@
                     android:textSize="13sp"
                     android:padding="0dp"
                     android:minHeight="0dp"
-                    android:minWidth="0dp" />
+                    android:minWidth="0dp"
+                    
+                     />
 
                 <Button
                     android:id="@+id/btnDecrease5"
@@ -186,7 +192,9 @@
                     android:textSize="13sp"
                     android:padding="0dp"
                     android:minHeight="0dp"
-                    android:minWidth="0dp" />
+                    android:minWidth="0dp"
+                    
+                     />
 
                 <Button
                     android:id="@+id/btnDecrease1"
@@ -197,7 +205,9 @@
                     android:textSize="13sp"
                     android:padding="0dp"
                     android:minHeight="0dp"
-                    android:minWidth="0dp" />
+                    android:minWidth="0dp"
+                    
+                     />
             </LinearLayout>
 
             <com.google.android.material.slider.Slider
@@ -223,7 +233,9 @@
                     android:textSize="13sp"
                     android:padding="0dp"
                     android:minHeight="0dp"
-                    android:minWidth="0dp" />
+                    android:minWidth="0dp"
+                    
+                     />
 
                 <Button
                     android:id="@+id/btnIncrease5"
@@ -234,7 +246,9 @@
                     android:textSize="13sp"
                     android:padding="0dp"
                     android:minHeight="0dp"
-                    android:minWidth="0dp" />
+                    android:minWidth="0dp"
+                    
+                     />
 
                 <Button
                     android:id="@+id/btnIncrease1"
@@ -245,7 +259,9 @@
                     android:textSize="13sp"
                     android:padding="0dp"
                     android:minHeight="0dp"
-                    android:minWidth="0dp" />
+                    android:minWidth="0dp"
+                    
+                     />
             </LinearLayout>
         </LinearLayout>
 
@@ -266,6 +282,8 @@
             android:layout_height="wrap_content"
             android:text="保存当前"
             android:textSize="12sp"
+            
+            
             app:layout_constraintBottom_toBottomOf="@id/tvPresetsLabel"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@id/tvPresetsLabel" />
@@ -287,6 +305,8 @@
             android:text="开始"
             android:textSize="20sp"
             android:textStyle="bold"
+            
+            
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@id/presetChipGroup" />
 
