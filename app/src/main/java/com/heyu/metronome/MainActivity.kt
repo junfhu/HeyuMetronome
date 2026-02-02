@@ -355,7 +355,7 @@ class MainActivity : AppCompatActivity() {
     private fun startMetronome() {
         metronomeEngine.start()
         wakeLock?.acquire(10*60*1000L)
-        binding.btnStartStop.text = "停止"
+        binding.btnStartStop.text = getString(R.string.stop)
         binding.btnStartStop.backgroundTintList = ContextCompat.getColorStateList(this, android.R.color.holo_red_light)
     }
 
@@ -364,7 +364,7 @@ class MainActivity : AppCompatActivity() {
         if (wakeLock?.isHeld == true) {
             wakeLock?.release()
         }
-        binding.btnStartStop.text = "开始"
+        binding.btnStartStop.text = getString(R.string.start)
         binding.btnStartStop.backgroundTintList = ContextCompat.getColorStateList(this, R.color.purple_700)
         binding.pendulumView.rotation = 0f
         resetBeatIndicators()

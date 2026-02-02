@@ -134,7 +134,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:text="拍号:"
+            android:text="@string/time_signature"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvTempoTerm" />
@@ -271,7 +271,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:text="预设速度:"
+            android:text="@string/saved_presets"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/bpmControls" />
@@ -280,10 +280,8 @@
             android:id="@+id/btnSavePreset"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="保存当前"
+            android:text="@string/save_preset"
             android:textSize="12sp"
-            
-            
             app:layout_constraintBottom_toBottomOf="@id/tvPresetsLabel"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@id/tvPresetsLabel" />
@@ -302,11 +300,9 @@
             android:layout_height="56dp"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="8dp"
-            android:text="开始"
+            android:text="@string/start"
             android:textSize="20sp"
             android:textStyle="bold"
-            
-            
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@id/presetChipGroup" />
 
