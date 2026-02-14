@@ -11,8 +11,8 @@ android {
         applicationId = "com.heyu.metronome"
         minSdk = 24
         targetSdk = 35
-        versionCode = 4
-        versionName = "0.13"
+        versionCode = 5
+        versionName = "0.14"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -33,6 +33,8 @@ android {
                 "proguard-rules.pro"
             )
             signingConfig = signingConfigs.getByName("release")
+            applicationIdSuffix = "HeyuMetronome"
+            versionNameSuffix = "0.13"
         }
     }
     compileOptions {

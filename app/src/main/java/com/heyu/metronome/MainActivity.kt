@@ -133,16 +133,16 @@ class MainActivity : AppCompatActivity() {
         pickerNoteValue.value = 1 // 默认选择4
         
         AlertDialog.Builder(this)
-            .setTitle("选择拍号")
+            .setTitle(R.string.select_time_signature)
             .setView(dialogView)
-            .setPositiveButton("确定") { _, _ ->
+            .setPositiveButton(R.string.confirm) { _, _ ->
                 currentBeats = pickerBeats.value
                 // 分母仅用于显示，实际拍数由分子决定
                 metronomeEngine.setTimeSignature(currentBeats)
                 createBeatIndicators()
                 updateTimeSignatureDisplay()
             }
-            .setNegativeButton("取消", null)
+            .setNegativeButton(R.string.cancel, null)
             .show()
     }
 
@@ -245,15 +245,15 @@ class MainActivity : AppCompatActivity() {
         editText.setSelection(defaultName.length) // 将光标移到末尾，方便用户修改
         
         AlertDialog.Builder(this)
-            .setTitle("保存当前速度")
+            .setTitle(R.string.save_current_tempo)
             .setView(editText)
-            .setPositiveButton("保存") { _, _ ->
+            .setPositiveButton(R.string.save) { _, _ ->
                 val name = editText.text.toString()
                 if (name.isNotEmpty()) {
                     savePreset(name, currentBPM, currentBeats)
                 }
             }
-            .setNegativeButton("取消", null)
+            .setNegativeButton(R.string.cancel, null)
             .show()
     }
 
@@ -271,7 +271,7 @@ class MainActivity : AppCompatActivity() {
         
         prefs.edit().putString(PRESETS_KEY, presets.toString()).apply()
         loadPresets()
-        Toast.makeText(this, "已保存: $name", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, getString(R.string.preset_saved) + ": $name", Toast.LENGTH_SHORT).show()
     }
 
     private fun loadPresets() {
@@ -305,12 +305,12 @@ class MainActivity : AppCompatActivity() {
 
     private fun showDeletePresetDialog(index: Int) {
         AlertDialog.Builder(this)
-            .setTitle("删除预设")
-            .setMessage("确定要删除这个预设吗？")
-            .setPositiveButton("删除") { _, _ ->
+            .setTitle(R.string.delete_preset)
+            .setMessage(R.string.delete_preset_confirm)
+            .setPositiveButton(R.string.delete) { _, _ ->
                 deletePreset(index)
             }
-            .setNegativeButton("取消", null)
+            .setNegativeButton(R.string.cancel, null)
             .show()
     }
 

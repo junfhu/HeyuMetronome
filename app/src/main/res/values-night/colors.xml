@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 夜间模式 - 所有文字白色 -->
+    <color name="purple_200">#FFFFFF</color>
+    <color name="purple_500">#FFFFFF</color>
+    <color name="purple_700">#FFFFFF</color>
+    <color name="teal_200">#FFFFFF</color>
+    <color name="teal_700">#FFFFFF</color>
+    <!-- 基础颜色 -->
+    <color name="black">#1A1A2E</color>
+    <color name="white">#FFFFFF</color>
+    <!-- 标题颜色：夜间深灰 -->
+    <color name="title_text">#333333</color>
+</resources>
